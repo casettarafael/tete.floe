@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="passo2.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Jogo de Adivinhação</h1>
+        <p class="instructions">Tente adivinhar o número entre 1 e 100!</p>
+        
+        <div id="hint"></div>
+        
+        <input type="number" id="guess" placeholder="Digite seu palpite" min="1" max="100">
+        <button id="submitGuess">Adivinhar</button>
+        
+        <p id="attempts">Tentativas: 0</p>
+        
+        <div id="celebration" style="display: none;">
+            <p>Você acertou! 🎉</p>
+        </div>
+    </div>
+
+    <script src="passo3.js"></script>
+</body>
+</html>

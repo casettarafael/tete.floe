@@ -1,0 +1,177 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FF7F50, #00BFFF); /* Gradiente vibrante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.game-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo com transparência */
+    border-radius: 15px;
+    padding: 30px 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    animation: fadeIn 1s ease-out;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #FFDD57; /* Cor amarela vibrante */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+
+.instructions {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #ecf0f1; /* Texto claro */
+    font-weight: 300;
+}
+
+input {
+    padding: 15px;
+    font-size: 18px;
+    width: 80%;
+    margin-bottom: 20px;
+    border: 2px solid #FFDD57;
+    border-radius: 8px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f39c12; /* Cor vibrante ao focar */
+    background-color: #2c3e50;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #FFDD57;
+    color: #2C3E50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #FFBF00; /* Cor de destaque ao passar o mouse */
+}
+
+button:active {
+    transform: scale(0.98); /* Leve efeito ao clicar */
+}
+
+#hint {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+#attempts {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#celebration {
+    font-size: 24px;
+    color: #2ecc71; /* Verde vibrante */
+    margin-top: 20px;
+    display: none;
+    font-weight: 500;
+    animation: bounceUp 1s ease-out forwards;
+}
+
+/* Media Query para telas pequenas (como celulares) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .game-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 28px; /* Reduz o tamanho do título em telas menores */
+    }
+
+    .instructions {
+        font-size: 16px; /* Ajusta o tamanho da instrução */
+    }
+
+    input {
+        width: 100%; /* Faz o campo de input ocupar toda a largura da tela */
+        font-size: 20px; /* Aumenta o tamanho da fonte */
+    }
+
+    button {
+        width: 100%; /* Faz o botão ocupar toda a largura */
+        font-size: 20px; /* Aumenta o tamanho da fonte */
+    }
+
+    #attempts {
+        font-size: 18px; /* Ajusta o tamanho da contagem de tentativas */
+    }
+
+    #celebration {
+        font-size: 22px; /* Ajusta o tamanho da celebração */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
